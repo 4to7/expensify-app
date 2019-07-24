@@ -68,8 +68,8 @@ const mapDispatchtoProps = (dispatch) => ({
     setTextfilter: (text) => dispatch(setTextfilter(text)),
     sortByDate: () => dispatch(sortByDate()),
     sortByAmount: () => dispatch(sortByAmount()),
-    setStartDate: (startDate) => dispatch(setEndDate(startDate)),
-    setEndtDate: (endDate) => dispatch(setEndtDate(endDate))
+    setStartDate: (startDate) => dispatch(setStartDate(startDate)),
+    setEndDate: (endDate) => dispatch(setEndDate(endDate))
 });
 
 export default connect(mapStateToProps,mapDispatchtoProps)(ExpenseListFilters);
