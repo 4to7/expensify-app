@@ -2,12 +2,14 @@
 // entry point - src/app.js
 // output bundle file - where to put it?
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+//const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env) => {
   const isProduction = env ==='production';
-  const CSSExtract = new ExtractTextPlugin('styles.css');
-
+//  const CSSExtract = new ExtractTextPlugin('styles.css');
+  const CSSExtract = new MiniCssExtractPlugin({ filename: 'styles.css' });
+  
   return {
     entry: './src/app.js',
     output: {
@@ -23,6 +25,7 @@ module.exports = (env) => {
         test: /\.s?css$/,
         use: CSSExtract.extract({
           use: [
+            MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
