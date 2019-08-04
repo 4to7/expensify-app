@@ -50,6 +50,23 @@ export const removeExpense = ({id} = {} ) => ({
     id
 });
 
+// 1. create startRemoveExpenses(id)
+// 2. test startRemoveExpenses with "should remove expenses from datanase"
+// 3. use startRemoveExpenses in EditExpense instead of removeExpense
+// 4. Adjkust EditExpensePage tests
+
+export const startRemoveExpenses = ( {id} = {} ) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).remove().then(() => {
+                dispatch(removeExpense({id}));  
+            }).catch((e) => {
+                console.log('This failed:', e)
+            });
+    };
+};
+
+
+
 //EDIT_EXPENSE
 export const editExpense = (id, updates) => ({
     type: 'EDIT_EXPENSE',
@@ -77,4 +94,4 @@ export const startSetExpenses = () => {
             dispatch(setExpenses(expenses));
         });
     };
-;}
+};
