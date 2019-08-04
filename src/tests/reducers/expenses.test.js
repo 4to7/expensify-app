@@ -8,7 +8,7 @@ test('should set default state', () => {
     expect(state).toEqual([]);
 });
 
-test('should remove  expense by ID', () => {
+test('should remove expense by ID', () => {
     const action = {
         type: 'REMOVE_EXPENSE',
         id: expenses[1].id
@@ -17,7 +17,7 @@ test('should remove  expense by ID', () => {
     expect(state).toEqual([ expenses[0],expenses[2] ]);
 });
 
-test('should NOT  remove expense by incorrect ID', () => {
+test('should NOT remove expense by incorrect ID', () => {
     const action = {
         type: 'REMOVE_EXPENSE',
         id: undefined
