@@ -23,10 +23,6 @@ const firebaseConfig = {
 
 
 
-
-
-
-
 // //  child removed
 //     database.ref('expenses').on('child_removed', (snapshot) => {
 //         console.log(snapshot.key, snapshot.val());
