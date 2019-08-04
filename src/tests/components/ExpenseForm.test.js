@@ -67,17 +67,17 @@ test('should set amount if invalid', () => {
 
 test('should call onSubmit prop for valid form submision', () => {
     const onSubmitSpy = jest.fn();
-    const wrapper = shallow(<ExpenseForm expense={expenses[1]} onSubmit={onSubmitSpy} />);
+    const wrapper = shallow(<ExpenseForm expense={expenses[0]} onSubmit={onSubmitSpy} />);
     
     wrapper.find('form').simulate('submit', {
         preventDefault: () => { }
     });
     expect(wrapper.state('error')).toBe('');
     expect(onSubmitSpy).toHaveBeenLastCalledWith({
-        description: expenses[1].description,
-        amount: expenses[1].amount,
-        note: expenses[1].note,
-        createdAt: expenses[1].createdAt
+        description: expenses[0].description,
+        amount: expenses[0].amount,
+        note: expenses[0].note,
+        createdAt: expenses[0].createdAt
     });
 
 });
