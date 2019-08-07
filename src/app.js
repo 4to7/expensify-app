@@ -13,7 +13,7 @@ import './styles/styles.scss';
 import { startSetExpenses } from './actions/expenses';
 import { login, logout } from './actions/auth';
 import getVisibleExpenses from './selectors/expenses';
-
+import LoadingPage from './components/LoadingPage';
 
 
 const store = configureStore();
@@ -33,7 +33,7 @@ const renderApp = () => {
     }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage/>, document.getElementById('app'));
 
 
 
